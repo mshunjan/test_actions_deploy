@@ -29,9 +29,9 @@ jobs:
         uses: appleboy/ssh-action@v0.1.4
         with:
            # SSH private key
+          host: 206.12.123.7
+          username: manjot
           key:  ${{ secrets.SSH_PRIVATE_KEY }}   
-          username: mshunjan@github.com
-          host: 206.12.123.7 
           port: 22
           script: | 
             cd test_actions_deploy
