@@ -32,10 +32,12 @@ jobs:
           key:  ${{ secrets.SSH_PRIVATE_KEY }}   
           username: mshunjan@github.com
           host: 206.12.123.7 
+          port: 22
           script: | 
             cd test_actions_deploy
             git pull origin master
             git status
-            echo "It worked"
+            whoami
+            ls -al
 
       
