@@ -30,7 +30,7 @@ jobs:
         with:
            # SSH private key
           key:  ${{ secrets.SSH_PRIVATE_KEY }}   
-          username: manjot
+          username: mshunjan@github.com
           host: 206.12.123.7 
           script: | 
             cd test_actions_deploy
