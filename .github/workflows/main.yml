@@ -26,14 +26,17 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Install SSH Key 
-        uses: shimataro/ssh-key-action@v2.3.0
+        uses: appleboy/ssh-action@v0.1.4
         with:
            # SSH private key
-          key:  ${{ secrets.SSH_PRIVATE_KEY }}  
-          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+          key:  ${{ secrets.SSH_PRIVATE_KEY }}   
+          username: manjot
+          host: 206.12.123.7
+          port: 22
+          script: | 
+            cd test_actions_deploy
+            git pull origin master
+            git status
+            echo "It worked"
 
       
