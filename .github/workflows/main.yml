@@ -31,8 +31,7 @@ jobs:
            # SSH private key
           key:  ${{ secrets.SSH_PRIVATE_KEY }}   
           username: manjot
-          host: 206.12.123.7
-          port: 22
+          host: 206.12.123.7 
           script: | 
             cd test_actions_deploy
             git pull origin master
